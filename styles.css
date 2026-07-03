@@ -1447,6 +1447,72 @@ body {
     display: none !important;
 }
 
+/* Print Stylesheet for Slide Deck Generation */
+@media print {
+    /* Hide non-presentation panels and controllers */
+    #prototype-panel,
+    .slides-footer,
+    .theme-toggle-container,
+    .hide-on-desktop,
+    .phone-toast {
+        display: none !important;
+    }
+    
+    /* Force main layout and parent containers to auto height & visible overflow for printing */
+    html, body, .app-container, .main-layout, #presentation-panel, #slides-container {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        overflow-y: visible !important;
+        display: block !important;
+        position: static !important;
+    }
+    
+    #presentation-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: #0F0F0F !important;
+        color: #FFFFFF !important;
+    }
+    
+    /* Make every slide visible on its own page */
+    .slide-item {
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        margin: 0 !important;
+        padding: 48px !important;
+        border: none !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+        background-color: #0F0F0F !important;
+        color: #FFFFFF !important;
+        overflow: hidden !important;
+    }
+    
+    /* General element adjustments for contrast and spacing in PDF */
+    body {
+        background-color: #0F0F0F !important;
+        color: #FFFFFF !important;
+    }
+    .slide-title {
+        color: #FFFFFF !important;
+    }
+    .slide-card {
+        background-color: #1F1F1F !important;
+        border-color: #333333 !important;
+    }
+}
+
 @media (max-width: 992px) {
     .hide-on-desktop {
         display: flex !important;
