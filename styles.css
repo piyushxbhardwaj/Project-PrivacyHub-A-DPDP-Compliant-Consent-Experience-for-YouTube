@@ -1448,6 +1448,10 @@ body {
 }
 
 /* Print Stylesheet for Slide Deck Generation */
+@page {
+    size: landscape;
+    margin: 0 !important;
+}
 @media print {
     /* Hide non-presentation panels and controllers */
     #prototype-panel,
@@ -1485,18 +1489,22 @@ body {
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
-        page-break-after: always !important;
-        break-after: page !important;
-        height: 100vh !important;
-        max-height: 100vh !important;
+        page-break-before: always !important;
+        break-before: page !important;
+        height: auto !important;
+        max-height: none !important;
         margin: 0 !important;
-        padding: 48px !important;
+        padding: 40px !important;
         border: none !important;
         box-shadow: none !important;
         box-sizing: border-box !important;
         background-color: #0F0F0F !important;
         color: #FFFFFF !important;
         overflow: hidden !important;
+    }
+    .slide-item:first-of-type {
+        page-break-before: avoid !important;
+        break-before: avoid !important;
     }
     
     /* General element adjustments for contrast and spacing in PDF */
