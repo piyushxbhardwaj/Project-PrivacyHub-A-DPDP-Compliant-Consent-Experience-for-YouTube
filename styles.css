@@ -1,0 +1,339 @@
+/* ==========================================================================
+   Design System & Styling Tokens: YouTube PrivacyHub
+   Inspired by Google Material Design 3 and YouTube Brand Guidelines
+   ========================================================================== */
+
+/* Typography & Root Variables */
+:root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Theme Variables: Default Dark Mode */
+    --color-primary: #FF0000;
+    --color-primary-hover: #CC0000;
+    --color-bg: #0F0F0F;
+    --color-surface: #1F1F1F;
+    --color-surface-secondary: #2D2D2D;
+    --color-border: #3F3F3F;
+    --color-text-high: #FFFFFF;
+    --color-text-med: #AAAAAA;
+    --color-text-low: #606060;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+    
+    /* System Statuses */
+    --color-success: #2BA640;
+    --color-success-bg: rgba(43, 166, 64, 0.15);
+    --color-warning: #F57C00;
+    --color-warning-bg: rgba(245, 124, 0, 0.15);
+    --color-danger: #D32F2F;
+    --color-danger-bg: rgba(211, 47, 47, 0.15);
+    --color-info: #0288D1;
+    --color-info-bg: rgba(2, 136, 209, 0.15);
+
+    /* Animation Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-norm: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Variables overrides */
+body.light-theme {
+    --color-bg: #F9F9F9;
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #F1F1F1;
+    --color-border: #E5E5E5;
+    --color-text-high: #0F0F0F;
+    --color-text-med: #606060;
+    --color-text-low: #909090;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-high);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    transition: background-color var(--transition-norm), color var(--transition-norm);
+}
+
+/* Header Styling */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 24px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition-norm), border-color var(--transition-norm);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.yt-logo-icon svg {
+    vertical-align: middle;
+}
+
+.header-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.text-red {
+    color: var(--color-primary);
+}
+
+.badge {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-med);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-high);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--color-surface-secondary);
+}
+
+/* Responsive View Switch (for mobile screen toggle) */
+.view-toggles {
+    display: flex;
+    background-color: var(--color-surface-secondary);
+    padding: 3px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+}
+
+.view-toggle-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 17px;
+    color: var(--color-text-med);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.view-toggle-btn.active {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+/* Workspace Layout */
+.workspace-container {
+    display: flex;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Left Pane: Presentation Slides */
+.presentation-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-bg);
+    overflow: hidden;
+    transition: flex var(--transition-norm);
+}
+
+.slides-outer-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides-container {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    min-height: 480px;
+    position: relative;
+    background-color: var(--color-surface);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px var(--color-shadow);
+    overflow: hidden;
+    transition: transform var(--transition-norm), background-color var(--transition-norm);
+}
+
+/* Presentation Slides Navigation Footer */
+.slides-footer {
+    height: 60px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 10;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-surface-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-high);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.nav-btn:hover {
+    background-color: var(--color-border);
+    transform: translateY(-1px);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+.slide-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.slide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.slide-dot:hover {
+    background-color: var(--color-text-med);
+}
+
+.slide-dot.active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.slide-progress-info {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-med);
+}
+
+/* Right Pane: Phone Simulator Container */
+.prototype-panel {
+    width: 440px;
+    border-left: 1px solid var(--color-border);
+    background-color: var(--color-surface-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    transition: all var(--transition-norm);
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-low);
+}
+
+/* Responsive Rules */
+.hide-on-desktop {
+    display: none !important;
+}
+
+@media (max-width: 992px) {
+    .hide-on-desktop {
+        display: flex !important;
+    }
+    
+    .workspace-container {
+        flex-direction: column;
+    }
+    
+    .prototype-panel {
+        width: 100%;
+        height: calc(100vh - 124px);
+    }
+    
+    .presentation-panel {
+        height: calc(100vh - 124px);
+    }
+    
+    .presentation-panel.hidden-mobile,
+    .prototype-panel.hidden-mobile {
+        display: none !important;
+    }
+}
