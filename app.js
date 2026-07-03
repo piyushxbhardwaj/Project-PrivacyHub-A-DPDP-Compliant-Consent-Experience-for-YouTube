@@ -350,4 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generateSlideDots();
         goToSlide(1);
     };
+
+    // Run slide initialization on page load
+    window.initializeSlides();
 });
