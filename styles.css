@@ -1459,7 +1459,7 @@ body {
     }
     
     /* Force main layout and parent containers to auto height & visible overflow for printing */
-    html, body, .app-container, .main-layout, #presentation-panel, #slides-container {
+    html, body, .workspace-container, #presentation-panel, .slides-outer-wrapper, #slides-container {
         height: auto !important;
         max-height: none !important;
         overflow: visible !important;
