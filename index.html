@@ -379,6 +379,137 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Slide 7: Success Criteria -->
+                    <div id="slide-7" class="slide-item">
+                        <div class="slide-header">
+                            <h3 class="slide-title">Success Criteria & Guardrails</h3>
+                            <span class="slide-subtitle">Measurable Target Metrics</span>
+                        </div>
+                        <div class="slide-content">
+                            <div class="success-criteria-container">
+                                <!-- Progress Bars Left -->
+                                <div class="success-bars-list">
+                                    <div class="success-bar-item">
+                                        <div class="success-bar-label">
+                                            <span>Valid Active Consent Rate</span>
+                                            <span style="color: var(--color-success);">97.8% (Target &ge;95%)</span>
+                                        </div>
+                                        <div class="success-bar-track">
+                                            <div class="success-bar-fill success-color" style="width: 97.8%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="success-bar-item">
+                                        <div class="success-bar-label">
+                                            <span>Onboarding Signup Conversion Drop-off</span>
+                                            <span style="color: var(--color-success);">1.6% (Target &lt;2.0%)</span>
+                                        </div>
+                                        <div class="success-bar-track">
+                                            <div class="success-bar-fill success-color" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="success-bar-item">
+                                        <div class="success-bar-label">
+                                            <span>Privacy Dashboard Adoption</span>
+                                            <span style="color: var(--color-success);">34.2% (Target &ge;30%)</span>
+                                        </div>
+                                        <div class="success-bar-track">
+                                            <div class="success-bar-fill success-color" style="width: 34.2%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="success-bar-item">
+                                        <div class="success-bar-label">
+                                            <span>Recommendation CTR Preservation</span>
+                                            <span style="color: var(--color-warning);">Within -1.5% (Target &plusmn;2%)</span>
+                                        </div>
+                                        <div class="success-bar-track">
+                                            <div class="success-bar-fill warning-color" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Compliance & Tickets Right -->
+                                <div class="success-kpi-grid">
+                                    <div class="success-kpi-card">
+                                        <div style="background-color: var(--color-success-bg); color: var(--color-success); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="success-kpi-title">Legal Compliance</div>
+                                            <div class="success-kpi-val" style="font-size: 12px;">Zero Audit Failures</div>
+                                        </div>
+                                    </div>
+                                    <div class="success-kpi-card neutral">
+                                        <div style="background-color: var(--color-info-bg); color: var(--color-info); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm0 4h8v2H6v-2zm0-8h12v2H6V5z"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="success-kpi-title">Support Efficiency</div>
+                                            <div class="success-kpi-val" style="font-size: 12px;">-25% Privacy Tickets</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8: Diagnostic Thinking -->
+                    <div id="slide-8" class="slide-item">
+                        <div class="slide-header">
+                            <h3 class="slide-title">Diagnostic Thinking</h3>
+                            <span class="slide-subtitle">Consent Rate Hypothesis Tree</span>
+                        </div>
+                        <div class="slide-content">
+                            <div class="hypo-tree-container">
+                                <div class="hypo-header-alert">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                                    Incident: North Star Metric (Valid Active Consent Rate) drops by 15% after launch.
+                                </div>
+                                <div class="hypo-flow-grid">
+                                    <!-- Column 1: Root -->
+                                    <div class="hypo-step-col">
+                                        <div class="hypo-node-card root">
+                                            <div class="hypo-node-title">North Star Drop</div>
+                                            <div class="hypo-node-desc">15% drop in valid active consent base (MAU).</div>
+                                            <span class="hypo-node-source">Funnel Analytics</span>
+                                        </div>
+                                    </div>
+                                    <!-- Column 2: Branches -->
+                                    <div class="hypo-step-col">
+                                        <div class="hypo-node-card branch" style="margin-bottom: 2px;">
+                                            <div class="hypo-node-title">H1: UX Onboarding Drop-off</div>
+                                            <div class="hypo-node-desc">A technical crash/loading delay occurs in the client-side consent prompt.</div>
+                                            <span class="hypo-node-source">Crash Analytics, Session Recs</span>
+                                        </div>
+                                        <div class="hypo-node-card branch" style="margin-bottom: 2px;">
+                                            <div class="hypo-node-title">H2: UI Wording Confusion</div>
+                                            <div class="hypo-node-desc">Warning copy regarding recommendation degradation causes users to dismiss.</div>
+                                            <span class="hypo-node-source">Support Tickets, Session Recs</span>
+                                        </div>
+                                        <div class="hypo-node-card branch">
+                                            <div class="hypo-node-title">H3: Event Logger Failure</div>
+                                            <div class="hypo-node-desc">Consent changes are recorded in the client UI but fail to commit to databases.</div>
+                                            <span class="hypo-node-source">Consent Event Logs, Audit Logs</span>
+                                        </div>
+                                    </div>
+                                    <!-- Column 3: Leaf / Actions -->
+                                    <div class="hypo-step-col">
+                                        <div class="hypo-node-card leaf" style="margin-bottom: 2px;">
+                                            <div class="hypo-node-title">Action (H1)</div>
+                                            <div class="hypo-node-desc">Deploy network retries for slow 3G connection regions.</div>
+                                        </div>
+                                        <div class="hypo-node-card leaf" style="margin-bottom: 2px;">
+                                            <div class="hypo-node-title">Action (H2)</div>
+                                            <div class="hypo-node-desc">A/B test UX copy adjustments highlighting benefit of history tracking.</div>
+                                        </div>
+                                        <div class="hypo-node-card leaf">
+                                            <div class="hypo-node-title">Action (H3)</div>
+                                            <div class="hypo-node-desc">Fix consent backend logger latency dropouts.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
             <!-- Slides Navigation Footer Controls -->
