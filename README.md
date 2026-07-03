@@ -1,5 +1,7 @@
 # PrivacyHub: Reimagining YouTube's Data Consent Experience under India's DPDP Act, 2023
 
+![PrivacyHub Project Banner](privacyhub_banner.png)
+
 A Product Management case study and interactive mobile prototype designed to address compliance with India's Digital Personal Data Protection (DPDP) Act, 2023, while maintaining YouTube's user engagement, recommendation quality, and business integrity.
 
 **Value Proposition:**
@@ -11,18 +13,20 @@ A Product Management case study and interactive mobile prototype designed to add
 1. [Core Problem Statement](#-core-problem-statement)
 2. [Product Goals & Scope](#-product-goals--scope)
 3. [The Proposed Solution: PrivacyHub](#-the-proposed-solution-privacyhub)
-4. [PM Metrics Framework](#-pm-metrics-framework)
-5. [Success Criteria](#-success-criteria)
-6. [Product Rollout Strategy](#-product-rollout-strategy)
-7. [Product Decisions & Trade-Offs](#-product-decisions--trade-offs)
-8. [Interactive Workspace Setup](#-interactive-workspace-setup)
+4. [System Architecture & PM Workflow](#-system-architecture--pm-workflow)
+5. [PM Metrics Framework](#-pm-metrics-framework)
+6. [Success Criteria](#-success-criteria)
+7. [Product Rollout Strategy](#-product-rollout-strategy)
+8. [Product Decisions & Trade-Offs](#-product-decisions--trade-offs)
+9. [Future Roadmap](#-future-roadmap)
+10. [Live Demo](#-live-demo)
 
 ---
 
 ## 🚨 Core Problem Statement
 YouTube relies heavily on user behavioral data (watch history, searches, location coordinates) to feed recommendation neural nets and distribute targeted ads. Under India's **Digital Personal Data Protection (DPDP) Act, 2023**, legacy models of generic, bundled consent are no longer compliant. 
 
-We must design an experience that secures **explicit, granular, informed, and revocable** consent without causing severe drop-offs during onboarding or degrading user engagement.
+This project proposes a **PrivacyHub framework** that enables YouTube to comply with India's DPDP Act while preserving personalization and user trust. We design an experience that secures **explicit, granular, informed, and revocable** consent without causing severe drop-offs during onboarding or degrading user engagement.
 
 ---
 
@@ -64,6 +68,34 @@ Consideration of multi-stakeholder benefits:
   * *Modular Consent*: Decoupled consent microservice simplifies system management.
   * *API Reuse*: Single audit-ready API structure extendable across other Google properties in India.
   * *Audit Log Security*: Automated event logging simplifies compliance verification.
+
+## ⛓️ System Architecture & PM Workflow
+
+### System Architecture
+The following Mermaid diagram outlines the data flow between the user, the PrivacyHub Consent Layer, the Consent Log Ledger (for audits), and the backend Recommendation & Ad Serving engines:
+
+```mermaid
+graph TD
+    User[User Screen UI] -->|Interacts with Toggles| ConsentLayer[Consent Onboarding Layer]
+    ConsentLayer -->|Commit Choices| PrivacyHub[PrivacyHub Consent Service]
+    PrivacyHub -->|Auditable Encrypted Logs| ConsentDB[(Consent Logs Database)]
+    PrivacyHub -->|Active Consent Tokens| RecEngine[Recommendation Engine]
+    PrivacyHub -->|Active Ads Consent Token| AdServer[Targeted Ads Server]
+    RecEngine -->|Personalized Video Feed| User
+    AdServer -->|Personalized Ads Feed| User
+```
+
+### PM Case Study Workflow
+This flow diagram demonstrates the product management methodology applied throughout this project from legislation research to phased nationwide rollout:
+
+```mermaid
+graph LR
+    Research[Research DPDP Act] --> Problem[Problem Definition]
+    Problem --> UXDesign[UX Design & Wireframing]
+    UXDesign --> Prototype[Interactive Prototype]
+    Prototype --> Metrics[Define Success Metrics]
+    Metrics --> Rollout[Phased Rollout Strategy]
+```
 
 ---
 
@@ -119,27 +151,36 @@ Phased rollout focuses on safety, monitoring metrics, and executing UX Experimen
 ---
 
 ## 🎓 Key Takeaways
-* **Problem**: Bundle consent fails under DPDP 2023, while optional profiling opt-outs risk degrading feed relevance.
-* **Solution**: PrivacyHub framework introduces Purpose-Based Consent, contextual JiT prompts, and a centralized control dashboard.
+* **Problem**: Bundled consent violates DPDP 2023, while optional profiling opt-outs risk degrading feed relevance.
+* **Solution**: PrivacyHub framework introduces Purpose-Based Consent, contextual JIT prompts, and a centralized control dashboard.
 * **Impact**: Full compliance, reduces support tickets by 25%, and preserves YouTube's feed recommendations with &plusmn;2% CTR stability.
 * **North Star**: Valid Active Consent Rate (% of MAU) targeted at &ge;95%.
 
 ---
 
-## 💻 Interactive Workspace Setup
-The project deliverables are packed into an interactive browser-based dashboard. 
-* **Left Side**: 12-slide case study presentation deck detailing the product architecture, user persona (Rahul), success criteria, metrics, rollout strategies, and a diagnostic hypothesis tree.
-* **Right Side**: Fully interactive 6-screen mobile app simulator mockup implementing the user onboarding path:
+## 🔮 Future Roadmap (Future Work)
+To continuously evolve the YouTube data privacy ecosystem, the following additions are planned:
+* **AI-Powered Privacy Assistant**: An interactive helper in Settings that answers user queries on how their specific watch logs affect recommendations.
+* **Smart Consent Reminders**: Semi-annual trust check-ins to remind users of active consents, enabling them to audit settings easily.
+* **Multi-Language Consent Onboarding**: Support for regional Indian languages (Hindi, Bengali, Marathi, etc.) to ensure complete user-comprehension across rural segments.
+* **Privacy Health Score**: An in-app badge summarizing account security settings to incentivize privacy compliance.
+* **YouTube Family Dashboard**: Parental supervision center where guardians can manage permissions for child profiles collectively.
+
+---
+
+## 🌐 Live Demo & Setup
+The project deliverables are packed into a unified interactive browser-based dashboard. 
+* **Left Panel**: 12-slide case study presentation deck detailing the product architecture, user persona (Rahul), success criteria, metrics, rollout strategies, and a diagnostic hypothesis tree.
+* **Right Panel**: Fully interactive 6-screen mobile app simulator mockup implementing the user onboarding path:
   1. *Welcome Splash* -> 2. *Data Usage Explainers* -> 3. *Granular Permission Switches* -> 4. *Success Confirmation Card* -> 5. *PrivacyHub Settings Dashboard* -> 6. *Wipe Data warning prompt*.
 
 ### Quick Launch Guide
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/piyushxbhardwaj/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube.git
    ```
-2. Double-click [index.html](file:///d:/Project/Project%20PrivacyHub%20A%20DPDP-Compliant%20Consent%20Experience%20for%20YouTube/index.html) or run a local server to view the interface in any browser:
+2. **Double-click [index.html](index.html)** inside your file manager, or start a local server to view the interface in any modern browser:
    ```bash
-   # Optional: start a server (e.g. python, node)
    python -m http.server 8000
    ```
-3. Open `http://localhost:8000` to interact. Navigate slides with **Arrow Keys** or buttons, and click through the mobile phone screens to simulate consent toggles and data erasure!
+3. **Interact**: Open `http://localhost:8000` to interact. Navigate slides with **Arrow Keys** or buttons, and click through the mobile phone screens to simulate consent toggles and data erasure!
