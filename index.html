@@ -758,6 +758,99 @@
                                 </div>
                             </div>
 
+                            <!-- Screen 3: Granular Consent -->
+                            <div id="screen-3" class="phone-screen-item">
+                                <div class="phone-header">
+                                    <button class="phone-back-btn" id="btn-screen-3-back" aria-label="Go Back">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                                    </button>
+                                    <span class="phone-title">Granular Permissions</span>
+                                </div>
+                                <div class="phone-content" style="padding-top: 10px;">
+                                    <p style="font-size: 9px; color: #AAAAAA; margin-bottom: 10px; line-height: 1.3;">Select optional preferences. You remain in control and can withdraw consent at any time.</p>
+                                    
+                                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                                        <!-- Toggle 1 -->
+                                        <div class="phone-toggle-row">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label">1. Video Personalization</div>
+                                                <div class="toggle-subtext">Saves watch and searches to recommend new videos.</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="toggle-watch-history" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+
+                                        <!-- Toggle 2 -->
+                                        <div class="phone-toggle-row">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label">2. Targeted Advertising</div>
+                                                <div class="toggle-subtext">Deliver ads relevant to your interests.</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="toggle-ad-history" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+
+                                        <!-- Toggle 3 -->
+                                        <div class="phone-toggle-row">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label">3. Location Curation</div>
+                                                <div class="toggle-subtext">Customize homepage with regional news & local trends.</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="toggle-location-history" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+
+                                        <!-- Toggle 4 -->
+                                        <div class="phone-toggle-row">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label">4. Smart Notifications</div>
+                                                <div class="toggle-subtext">Alerts you when matching creator videos drop.</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="toggle-notification-history" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="phone-footer-actions">
+                                    <button class="phone-btn-primary" id="btn-screen-3-confirm">Confirm Preferences</button>
+                                    <button class="phone-link-btn" id="btn-screen-3-all">Accept All Defaults</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen 4: Success / You're In Control -->
+                            <div id="screen-4" class="phone-screen-item">
+                                <div class="phone-content" style="justify-content: center; align-items: center; text-align: center;">
+                                    <div class="success-check-wrapper">
+                                        <div class="checkmark-outer">
+                                            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                <polyline points="22 4 12 14.01 9 11.01"/>
+                                            </svg>
+                                        </div>
+                                        <h4 style="font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">Preferences Saved!</h4>
+                                        <p style="font-size: 9.5px; color: #AAAAAA; line-height: 1.4; padding: 0 12px; margin-bottom: 20px;">Your choices are applied immediately. You can modify these settings anytime by visiting <strong>YouTube Settings &gt; PrivacyHub</strong>.</p>
+                                        
+                                        <div style="width: 100%; max-width: 220px; background-color: #212121; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--color-border); font-size: 9px; text-align: left; display: flex; flex-direction: column; gap: 6px; margin: 0 auto;">
+                                            <div style="font-weight: 700; border-bottom: 1px solid var(--color-border); padding-bottom: 4px;">Applied Settings Summary:</div>
+                                            <div id="summary-watch">✔ Personalization: <span style="font-weight: 700; color: var(--color-success);">ON</span></div>
+                                            <div id="summary-ads">✔ Targeted Ads: <span style="font-weight: 700; color: var(--color-success);">ON</span></div>
+                                            <div id="summary-location">✔ Location Curation: <span style="font-weight: 700; color: var(--color-success);">ON</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="phone-footer-actions">
+                                    <button class="phone-btn-primary" id="btn-screen-4-next">Go to PrivacyHub Dashboard</button>
+                                </div>
+                            </div>
+
                         <!-- Phone Bottom Home Bar Indicator -->
                         <div class="phone-home-indicator"></div>
                     </div>
