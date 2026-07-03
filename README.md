@@ -2,6 +2,11 @@
 
 ![PrivacyHub Project Banner](privacyhub_banner.png)
 
+[![GitHub Pages](https://img.shields.io/badge/Live-GitHub%20Pages-success)](https://piyushxbhardwaj.github.io/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube/)
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+
 🚀 **Live Deployment Link:** [View PrivacyHub Live Case Study & Prototype](https://piyushxbhardwaj.github.io/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube/)
 
 A Product Management case study and interactive mobile prototype designed to address compliance with India's Digital Personal Data Protection (DPDP) Act, 2023, while maintaining YouTube's user engagement, recommendation quality, and business integrity.
