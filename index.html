@@ -851,6 +851,102 @@
                                 </div>
                             </div>
 
+                            <!-- Screen 5: PrivacyHub Dashboard -->
+                            <div id="screen-5" class="phone-screen-item">
+                                <div class="phone-header">
+                                    <button class="phone-back-btn" id="btn-screen-5-back" aria-label="Go Back">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                                    </button>
+                                    <span class="phone-title">PrivacyHub Dashboard</span>
+                                </div>
+                                <div class="phone-content" style="padding-top: 10px;">
+                                    <div class="dashboard-title-section">
+                                        <div style="font-size: 11.5px; font-weight: 700; color: #FFFFFF;">Manage Your Data Choices</div>
+                                        <span class="dashboard-badge">DPDP Active</span>
+                                    </div>
+                                    <p style="font-size: 8.5px; color: #AAAAAA; margin-bottom: 12px; line-height: 1.3;">Withdraw consent, download account files, or request permanent deletion below.</p>
+                                    
+                                    <!-- Consent Toggles (Sync with Screen 3) -->
+                                    <div class="phone-card" style="padding: 10px; margin-bottom: 8px;">
+                                        <div style="font-size: 10.5px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px; border-bottom: 1px solid var(--color-border); padding-bottom: 4px;">Quick Consent Adjustments</div>
+                                        
+                                        <div class="phone-toggle-row" style="padding: 4px 0;">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label" style="font-size: 10.5px;">Video Personalization</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="dash-toggle-watch" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="phone-toggle-row" style="padding: 4px 0;">
+                                            <div class="toggle-meta">
+                                                <div class="toggle-label" style="font-size: 10.5px;">Targeted Advertising</div>
+                                            </div>
+                                            <label class="phone-switch">
+                                                <input type="checkbox" id="dash-toggle-ads" checked>
+                                                <span class="phone-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Download Data Card -->
+                                    <div class="phone-card" style="padding: 10px; margin-bottom: 8px;">
+                                        <div class="phone-card-title" style="font-size: 11px;">
+                                            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" fill="currentColor"/></svg>
+                                            Request Copy of Stored Data
+                                        </div>
+                                        <p class="phone-card-desc" style="font-size: 9px; margin-bottom: 6px;">Download watch activity, voice files, search history, and coordinates.</p>
+                                        <button class="phone-btn-secondary" id="btn-dash-download" style="width: 100%; padding: 6px 12px; font-size: 11px; border-radius: 6px;">Request Data Copy</button>
+                                    </div>
+
+                                    <!-- Deletion Alert -->
+                                    <div class="phone-card" style="padding: 10px; margin-bottom: 8px; border-color: rgba(211,47,47,0.3);">
+                                        <div class="phone-card-title" style="font-size: 11px; color: #FF4D4D;">
+                                            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="currentColor"/></svg>
+                                            Permanently Erase YouTube Data
+                                        </div>
+                                        <p class="phone-card-desc" style="font-size: 9px; margin-bottom: 6px;">Permanently wipe all profiling and history logs from our secure servers.</p>
+                                        <button class="dashboard-btn-alert" id="btn-dash-delete" style="width: 100%; border-radius: 6px; padding: 6px 12px;">Delete Personal Data</button>
+                                    </div>
+                                </div>
+                                <!-- Toast Simulation popup -->
+                                <div class="phone-toast" id="phone-toast">
+                                    <span style="color: var(--color-success);">✔</span>
+                                    <span id="toast-text">Data download request submitted.</span>
+                                </div>
+                            </div>
+
+                            <!-- Screen 6: Delete Data Confirmation -->
+                            <div id="screen-6" class="phone-screen-item">
+                                <div class="phone-header">
+                                    <button class="phone-back-btn" id="btn-screen-6-back" aria-label="Go Back">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                                    </button>
+                                    <span class="phone-title" style="color: #FF4D4D;">Erase Personal Data</span>
+                                </div>
+                                <div class="phone-content" style="padding-top: 12px;">
+                                    <div class="phone-warning-card">
+                                        <div class="phone-warning-title">
+                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>
+                                            Warning: Right to Erasure (DPDP)
+                                        </div>
+                                        <p style="font-size: 9.5px; color: #FFD2D2; line-height: 1.4;">Proceeding will permanently purge watch records, query history, device models, and geographic caches from YouTube systems. <strong>This cannot be undone.</strong></p>
+                                    </div>
+
+                                    <h5 style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; margin-bottom: 6px; color: #FFFFFF;">Implications on Recommendation:</h5>
+                                    <ul class="slide-list" style="margin-bottom: 20px; gap: 4px;">
+                                        <li style="font-size: 9.5px; color: #AAAAAA;">Your personalized recommendations feed will be completely reset.</li>
+                                        <li style="font-size: 9.5px; color: #AAAAAA;">Trending regional videos localizations will be deactivated.</li>
+                                        <li style="font-size: 9.5px; color: #AAAAAA;">Search queries autocomplete suggestions will be generic.</li>
+                                    </ul>
+                                </div>
+                                <div class="phone-footer-actions">
+                                    <button class="phone-btn-primary" id="btn-screen-6-confirm" style="background-color: var(--color-danger);">Yes, Delete Everything</button>
+                                    <button class="phone-btn-secondary" id="btn-screen-6-cancel">Cancel & Keep Data</button>
+                                </div>
+                            </div>
+
                         <!-- Phone Bottom Home Bar Indicator -->
                         <div class="phone-home-indicator"></div>
                     </div>
