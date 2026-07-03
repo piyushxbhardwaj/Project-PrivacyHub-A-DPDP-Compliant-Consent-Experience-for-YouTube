@@ -2,6 +2,8 @@
 
 ![PrivacyHub Project Banner](privacyhub_banner.png)
 
+🚀 **Live Deployment Link:** [View PrivacyHub Live Case Study & Prototype](https://piyushxbhardwaj.github.io/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube/)
+
 A Product Management case study and interactive mobile prototype designed to address compliance with India's Digital Personal Data Protection (DPDP) Act, 2023, while maintaining YouTube's user engagement, recommendation quality, and business integrity.
 
 **Value Proposition:**
@@ -175,12 +177,14 @@ The project deliverables are packed into a unified interactive browser-based das
   1. *Welcome Splash* -> 2. *Data Usage Explainers* -> 3. *Granular Permission Switches* -> 4. *Success Confirmation Card* -> 5. *PrivacyHub Settings Dashboard* -> 6. *Wipe Data warning prompt*.
 
 ### Quick Launch Guide
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/piyushxbhardwaj/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube.git
-   ```
-2. **Double-click [index.html](index.html)** inside your file manager, or start a local server to view the interface in any modern browser:
-   ```bash
-   python -m http.server 8000
-   ```
-3. **Interact**: Open `http://localhost:8000` to interact. Navigate slides with **Arrow Keys** or buttons, and click through the mobile phone screens to simulate consent toggles and data erasure!
+* 🌐 **Instant Live View**: Visit the deployed site directly at [https://piyushxbhardwaj.github.io/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube/](https://piyushxbhardwaj.github.io/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube/)
+* 💻 **Run Locally**:
+  1. **Clone the repository**:
+     ```bash
+     git clone https://github.com/piyushxbhardwaj/Project-PrivacyHub-A-DPDP-Compliant-Consent-Experience-for-YouTube.git
+     ```
+  2. **Double-click [index.html](index.html)** inside your file manager, or start a local server to view the interface in any modern browser:
+     ```bash
+     python -m http.server 8000
+     ```
+  3. **Interact**: Open `http://localhost:8000` to interact. Navigate slides with **Arrow Keys or buttons**, and click through the mobile phone screens to simulate consent toggles and data erasure!
