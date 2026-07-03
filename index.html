@@ -510,6 +510,143 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Slide 9: PM Dashboard -->
+                    <div id="slide-9" class="slide-item">
+                        <div class="slide-header">
+                            <h3 class="slide-title">PM Analytics Dashboard</h3>
+                            <span class="slide-subtitle">Live Segmented Performance</span>
+                        </div>
+                        <div class="slide-content">
+                            <!-- Segment Selector Row -->
+                            <div class="dash-selectors-panel">
+                                <div style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--color-text-med);">
+                                    SEGMENTS:
+                                </div>
+                                <div class="dash-select-group" id="group-platform">
+                                    <button class="dash-select-btn active" data-value="Android">Android</button>
+                                    <button class="dash-select-btn" data-value="iOS">iOS</button>
+                                </div>
+                                <div class="dash-select-group" id="group-user">
+                                    <button class="dash-select-btn active" data-value="all">All Users</button>
+                                    <button class="dash-select-btn" data-value="new">New Users</button>
+                                </div>
+                                <div class="dash-select-group" id="group-geo">
+                                    <button class="dash-select-btn active" data-value="IN">India (Nat.)</button>
+                                    <button class="dash-select-btn" data-value="tier1">Tier 1 Cities</button>
+                                    <button class="dash-select-btn" data-value="tier2">Tier 2/3</button>
+                                </div>
+                            </div>
+                            <!-- Dashboard Main Content -->
+                            <div class="dash-chart-grid">
+                                <!-- Chart Left -->
+                                <div class="dash-chart-card">
+                                    <div class="dash-chart-title">
+                                        <span>Consent Coverage Trend (4 Weeks)</span>
+                                        <span style="color: var(--color-success);" id="chart-val-display">97.8% Final</span>
+                                    </div>
+                                    <div class="chart-svg-container">
+                                        <svg viewBox="0 0 400 120" width="100%" height="100%">
+                                            <!-- Grid Lines -->
+                                            <line x1="0" y1="100" x2="400" y2="100" class="chart-grid-line" />
+                                            <line x1="0" y1="50" x2="400" y2="50" class="chart-grid-line" />
+                                            <!-- Labels -->
+                                            <text x="5" y="115" fill="var(--color-text-low)" font-size="8">Week 1</text>
+                                            <text x="130" y="115" fill="var(--color-text-low)" font-size="8">Week 2</text>
+                                            <text x="260" y="115" fill="var(--color-text-low)" font-size="8">Week 3</text>
+                                            <text x="365" y="115" fill="var(--color-text-low)" font-size="8">Week 4</text>
+                                            <!-- Path line -->
+                                            <path d="M 10 90 L 130 70 L 260 45 L 390 20" class="chart-line" id="chart-line-path"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- Segment Breakdown Right -->
+                                <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+                                    <div class="slide-card" style="padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-size: 10px; color: var(--color-text-med);">Valid Active Consent</div>
+                                            <div class="success-kpi-val" id="kpi-consent-rate" style="font-size: 18px; color: var(--color-primary);">97.8%</div>
+                                        </div>
+                                        <span style="font-size: 9px; padding: 2px 6px; border-radius: 4px; background-color: var(--color-success-bg); color: var(--color-success);">Compliance Safe</span>
+                                    </div>
+                                    <div class="slide-card" style="padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-size: 10px; color: var(--color-text-med);">Signup Conversion Rate</div>
+                                            <div class="success-kpi-val" id="kpi-signup-conv" style="font-size: 18px;">98.4%</div>
+                                        </div>
+                                        <span style="font-size: 9px; padding: 2px 6px; border-radius: 4px; background-color: var(--color-surface); color: var(--color-text-med);" id="kpi-signup-diff">-1.6% vs legacy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 10: Rollout & Risks -->
+                    <div id="slide-10" class="slide-item">
+                        <div class="slide-header">
+                            <h3 class="slide-title">Rollout Strategy & Trade-offs</h3>
+                            <span class="slide-subtitle">Implementation Timeline & Risk Control</span>
+                        </div>
+                        <div class="slide-content">
+                            <!-- Rollout Timeline -->
+                            <div class="rollout-timeline-wrapper">
+                                <div class="rollout-node active">
+                                    <div class="rollout-node-dot">1</div>
+                                    <span class="rollout-node-title">Dogfooding</span>
+                                </div>
+                                <div class="rollout-node">
+                                    <div class="rollout-node-dot">2</div>
+                                    <span class="rollout-node-title">1% Release</span>
+                                </div>
+                                <div class="rollout-node">
+                                    <div class="rollout-node-dot">3</div>
+                                    <span class="rollout-node-title">5% UX Exp.</span>
+                                </div>
+                                <div class="rollout-node">
+                                    <div class="rollout-node-dot">4</div>
+                                    <span class="rollout-node-title">25% Regional</span>
+                                </div>
+                                <div class="rollout-node">
+                                    <div class="rollout-node-dot">5</div>
+                                    <span class="rollout-node-title">Nationwide</span>
+                                </div>
+                            </div>
+                            <!-- Trade-off Matrix -->
+                            <div class="comparison-table-wrapper" style="margin-top: 0;">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Decision</th>
+                                            <th>Primary Benefit</th>
+                                            <th>Trade-off & Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Granular Consent Switches</strong></td>
+                                            <td>Full transparency, DPDP alignment</td>
+                                            <td>Slightly increased signup friction (+1.6% drop-off)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Integrated PrivacyHub Dashboard</strong></td>
+                                            <td>Empowered user control & self-serve deletion</td>
+                                            <td>Significant backend event logger engineering effort</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Just-in-Time Voice/Location Prompts</strong></td>
+                                            <td>Contextual relevancy, lower immediate friction</td>
+                                            <td>Increased local state caching complexity in app</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Under-18 Ad Blocking & Parental Verify</strong></td>
+                                            <td>Protects minors, full legal compliance</td>
+                                            <td>Forgo targeted ad-monetization for child accounts</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
             <!-- Slides Navigation Footer Controls -->
